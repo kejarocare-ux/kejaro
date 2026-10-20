@@ -28,13 +28,47 @@
 .footer-socials a{color:var(--gold2);text-decoration:none;font-size:13px;border-bottom:1px solid transparent;padding-bottom:2px}
 .footer-socials a:hover,.footer-socials a:focus-visible{border-color:var(--gold2)}
 @media(max-width:760px){.social-links{grid-template-columns:1fr}.social-panel{padding:19px}}
+
+/* Asesor KEJARO: interfaz local, sin llamadas externas */
+#asesor{background:radial-gradient(ellipse at 5% 25%,rgba(200,170,112,.10),transparent 42%),#111713;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.ka-layout{display:grid;grid-template-columns:minmax(240px,.85fr) minmax(320px,1.15fr);gap:38px;align-items:start}
+.ka-intro h2{font-size:clamp(1.8rem,3vw,2.75rem);line-height:1.16;margin:12px 0 14px}.ka-intro p{color:var(--muted)}
+.ka-proof{margin:22px 0 0;padding:0;list-style:none}.ka-proof li{display:flex;gap:11px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--line);font-size:.93rem}.ka-check{color:var(--gold2);font-weight:900}
+.ka-widget{border:1px solid #52614e;background:#171e19;box-shadow:0 20px 55px #0005;border-radius:15px;overflow:hidden}
+.ka-top{padding:20px 22px;background:linear-gradient(100deg,#243026,#171e19);border-bottom:1px solid var(--line);display:flex;gap:14px;align-items:center}
+.ka-avatar{width:43px;height:43px;flex:0 0 43px;background:#101611;border:1px solid var(--gold);border-radius:50%;color:var(--gold2);display:grid;place-items:center;font-family:Georgia,serif;font-size:23px}
+.ka-top strong{display:block;font-size:1.05rem;line-height:1.3}.ka-top small{color:var(--muted)}
+.ka-dialogue{padding:22px;min-height:315px;display:flex;flex-direction:column;gap:16px}
+.ka-status{font-size:.71rem;color:var(--gold2);letter-spacing:.14em;text-transform:uppercase}
+.ka-bubble{max-width:94%;background:#26352b;border:1px solid #445345;padding:15px 17px;border-radius:3px 15px 15px 15px;line-height:1.55}
+.ka-bubble strong{color:var(--gold2)}.ka-bubble p{margin:.4rem 0 0;color:#e4e7df;font-size:.94rem}
+.ka-choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.ka-choices button{background:#141b16;border:1px solid #455647;color:var(--text);border-radius:8px;padding:12px 10px;text-align:left;font:inherit;font-size:.9rem;line-height:1.35;cursor:pointer;min-height:54px;transition:border-color .15s,background .15s}
+.ka-choices button:hover,.ka-choices button:focus-visible{border-color:var(--gold);background:#2b342b;outline-offset:2px}
+.ka-actions{display:flex;gap:14px;flex-wrap:wrap;align-items:center}.ka-reset{background:none;border:0;color:var(--gold2);text-decoration:underline;cursor:pointer;font:inherit;font-size:.86rem;padding:0}
+.ka-selection{font-size:.86rem;color:var(--muted)}.ka-selection strong{color:var(--gold2)}
+.ka-results{display:grid;gap:11px}.ka-product{border:1px solid #465445;border-radius:9px;padding:15px;background:#1e2921}
+.ka-product-top{display:flex;justify-content:space-between;gap:10px;align-items:center}.ka-tag{font-size:.69rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold2)}
+.ka-product h4{font-size:1rem;margin:8px 0 5px;line-height:1.4}.ka-product p{font-size:.86rem;color:var(--muted);margin:0 0 11px}.ka-product a{display:inline-flex;border:1px solid var(--gold);background:var(--gold);color:#15170f;text-decoration:none;padding:9px 13px;font-size:.83rem;font-weight:750;border-radius:5px}
+.ka-foot{font-size:.77rem;color:var(--muted);line-height:1.55;margin:0}.ka-foot a{color:var(--gold2)}
+.ka-quiz-results{border:1px solid #455947;padding:17px;margin-top:22px;background:#1c2a21}
+.ka-quiz-results h4{margin:0 0 10px;color:var(--gold2)}.ka-quiz-results p{margin:0 0 9px}.ka-quiz-results ul{margin:0 0 12px;padding-left:22px}
+.ka-quiz-results a{color:var(--gold2)}
+@media(max-width:850px){.ka-layout{grid-template-columns:1fr;gap:23px}.ka-intro{max-width:700px}}
+@media(max-width:480px){.ka-dialogue{padding:16px}.ka-choices{grid-template-columns:1fr}.ka-bubble{max-width:100%}}
+
+
+/* Navegación adaptada: evita desbordamiento en móviles */
+@media(max-width:900px){.navlinks{gap:12px;font-size:.79rem;flex-wrap:wrap;justify-content:flex-end}.navlinks a:not([href="#asesor"]):not([href="#productos"]){display:none}}
+@media(max-width:480px){.navlinks a[href="#asesor"]{display:inline-flex!important}.topbar .nav{gap:9px}.brand{flex-shrink:0}.navlinks{gap:12px}.navlinks a{white-space:nowrap;font-size:.77rem}}
+@media(prefers-reduced-motion:reduce){.ka-choices button{transition:none}}
 </style>
 </head>
 <body>
-<header class="topbar"><div class="wrap nav"><a class="brand" href="#inicio" aria-label="KEJARO, inicio"><span class="logo">K</span><span>KEJARO</span></a><nav class="navlinks" aria-label="Navegación principal"><a href="#metodo">Nuestro método</a><a href="#diagnostico">Tu perfil</a><a href="#productos">Categorías</a><a href="#servicios">Servicios</a><a href="#comunidad">Comunidad</a><a href="#contacto">Contacto</a></nav></div></header>
+<header class="topbar"><div class="wrap nav"><a class="brand" href="#inicio" aria-label="KEJARO, inicio"><span class="logo">K</span><span>KEJARO</span></a><nav class="navlinks" aria-label="Navegación principal"><a href="#asesor">Asesor KEJARO</a><a href="#metodo">Nuestro método</a><a href="#diagnostico">Tu perfil</a><a href="#productos">Categorías</a><a href="#servicios">Servicios</a><a href="#comunidad">Comunidad</a><a href="#contacto">Contacto</a></nav></div></header>
 <main>
-<div class="wrap hero" id="inicio"><div><div class="eyebrow">Cuidado personal masculino · Estilo · Elecciones inteligentes</div><h1>Cuida hoy al <span>hombre que quieres ser.</span></h1><p class="lead">Descubre qué puede encajar contigo: desde el cuidado de la piel y el cabello hasta la barba, las fragancias y los detalles que completan tu estilo. Recomendaciones pensadas para tus objetivos y tu presupuesto.</p><div class="actions"><a class="btn primary" href="#diagnostico">Crear mi perfil <span aria-hidden="true">↗</span></a><a class="btn secondary" href="#metodo">Cómo funciona</a></div></div><div class="hero-card" aria-label="Presentación de KEJARO"><div class="card-kicker">KEJARO · Cuidado con intención</div><div class="card-bottom"><h2>Invertir en ti también es avanzar.</h2><p>Una guía práctica para descubrir lo que necesitas y comprar con más criterio, sin gastar por gastar.</p></div><div class="mini-tags"><span>Piel</span><span>Cabello</span><span>Barba</span><span>Fragancias</span><span>Estilo</span></div></div></div>
-<section id="metodo"><div class="wrap"><div class="section-head"><div class="eyebrow">El método KEJARO</div><h2>Una mejor elección empieza por conocerte.</h2><p>No necesitas una estantería llena de productos. Empieza por lo que quieres mejorar, compara con calma y crea una rutina que puedas mantener.</p></div><div class="grid3"><article class="feature"><div class="num">01 / CONÓCETE</div><h3>Define tu objetivo</h3><p>Identifica qué te importa hoy: piel, barba, cabello, fragancia o una rutina completa.</p></article><article class="feature"><div class="num">02 / PRIORIZA</div><h3>Respeta tu presupuesto</h3><p>Recomendamos empezar por lo esencial y añadir opciones solo cuando tengan sentido para ti.</p></article><article class="feature"><div class="num">03 / COMPARA</div><h3>Decide con información</h3><p>El objetivo es facilitar comparaciones claras y, cuando estén disponibles, enlaces de tiendas y afiliados.</p></article></div></div></section>
+<div class="wrap hero" id="inicio"><div><div class="eyebrow">Cuidado personal masculino · Estilo · Elecciones inteligentes</div><h1>Cuida hoy al <span>hombre que quieres ser.</span></h1><p class="lead">Descubre qué puede encajar contigo: desde el cuidado de la piel y el cabello hasta la barba, las fragancias y los detalles que completan tu estilo. Recomendaciones pensadas para tus objetivos y tu presupuesto.</p><div class="actions"><a class="btn primary" href="#diagnostico">Crear mi perfil <span aria-hidden="true">↗</span></a><a class="btn secondary" href="#asesor">Probar asesor gratis ↗</a></div></div><div class="hero-card" aria-label="Presentación de KEJARO"><div class="card-kicker">KEJARO · Cuidado con intención</div><div class="card-bottom"><h2>Invertir en ti también es avanzar.</h2><p>Una guía práctica para descubrir lo que necesitas y comprar con más criterio, sin gastar por gastar.</p></div><div class="mini-tags"><span>Piel</span><span>Cabello</span><span>Barba</span><span>Fragancias</span><span>Estilo</span></div></div></div>
+<section id="metodo"><div class="wrap"><div class="section-head"><div class="eyebrow">El método KEJARO</div><h2>Una mejor elección empieza por conocerte.</h2><p>No necesitas una estantería llena de productos. Empieza por lo que quieres mejorar, compara con calma y crea una rutina que puedas mantener.</p></div><div class="grid3"><article class="feature"><div class="num">01 / CONÓCETE</div><h3>Define tu objetivo</h3><p>Identifica qué te importa hoy: piel, barba, cabello, fragancia o una rutina completa.</p></article><article class="feature"><div class="num">02 / PRIORIZA</div><h3>Respeta tu presupuesto</h3><p>Recomendamos empezar por lo esencial y añadir opciones solo cuando tengan sentido para ti.</p></article><article class="feature"><div class="num">03 / COMPARA</div><h3>Decide con información</h3><p>El objetivo es facilitar comparaciones claras y, enlaces de producto para revisar detalles en la tienda externa.</p></article></div></div></section>
 <section class="quiz-section" id="diagnostico"><div class="wrap quiz-layout"><div class="quiz-intro"><div class="eyebrow">Tu perfil KEJARO</div><h2>Responde y recibe una orientación más útil.</h2><p>Esta encuesta breve adapta la orientación a tu prioridad, tus hábitos y tu presupuesto. También nos permite preparar recomendaciones más relevantes para el país donde compras.</p><p><strong>Privacidad:</strong> tus respuestas se procesan en esta página y no se envían a un servidor en esta versión.</p><p><strong>Nota:</strong> es orientación general de cuidado personal, no un diagnóstico médico.</p></div>
 <form class="quiz" id="routineForm">
 <div class="progress-top"><span>Tu perfil</span><span id="progressText">0 de 7 respondidas</span></div><div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
@@ -48,6 +82,20 @@
 <div class="quiz-actions"><button class="btn primary" type="submit">Ver mi perfil personalizado ↗</button><button class="btn secondary" type="reset">Borrar respuestas</button></div><small>Las recomendaciones son orientativas. Los productos de la tienda incluyen enlaces de afiliado; revisa siempre los detalles y el precio en la tienda de destino.</small>
 <div class="result" id="result" role="status" aria-live="polite" tabindex="-1"></div>
 </form></div></section>
+
+<section id="asesor" aria-labelledby="ka-heading"><div class="wrap ka-layout">
+  <div class="ka-intro"><div class="eyebrow">NUEVO · ASESOR KEJARO</div>
+    <h2 id="ka-heading">Encuentra opciones para tu rutina, sin adivinar.</h2>
+    <p>Tu Guía de Cuidado Masculino, adaptada a KEJARO. Responde tres preguntas y recibirás orientación general y una selección basada en los productos que realmente están publicados en nuestra tienda.</p>
+    <ul class="ka-proof"><li><span class="ka-check" aria-hidden="true">✓</span><span>Revisa las fichas del catálogo al generar cada recomendación.</span></li>
+      <li><span class="ka-check" aria-hidden="true">✓</span><span>Sin registro, sin costo y sin enviar tus respuestas a un servidor.</span></li>
+      <li><span class="ka-check" aria-hidden="true">✓</span><span>Te ayuda a comparar; no diagnostica ni obliga a comprar.</span></li></ul>
+  </div>
+  <div class="ka-widget" aria-label="Asesor interactivo KEJARO">
+    <div class="ka-top"><span class="ka-avatar" aria-hidden="true">K</span><div><strong>Asesor KEJARO</strong><small>Guía interactiva · Recomendaciones orientativas</small></div></div>
+    <div class="ka-dialogue" id="ka-dialogue" aria-live="polite" aria-atomic="false"><p>Iniciando asesor...</p></div>
+  </div>
+</div></section>
 <section id="productos"><div class="wrap"><div class="section-head"><div class="eyebrow">La tienda KEJARO</div><h2>Encuentra tu nivel de cuidado.</h2><p>Explora nuestra selección por presupuesto. Cada botón te lleva a la ficha del producto en Amazon para que consultes el precio, disponibilidad, detalles y opciones de envío vigentes.</p></div>
 <div class="store-tier"><div class="tier-heading"><div><div class="eyebrow">01 / Empieza por lo esencial</div><h3>ECONÓMICO</h3><p>Opciones accesibles para construir tu rutina sin complicaciones.</p></div><span class="tier-mark">E</span></div><div class="products">
 <article class="product"><div class="product-art product-art-custom" role="img" aria-label="Presentación gráfica de FIX YOUR LID; no es fotografía del producto"><span class="visual-mark">KEJARO SELECCIÓN</span><strong>FIX YOUR LID</strong><small>Ultra Light · Pomada capilar</small><span class="visual-caption">Ver fotografía real en Amazon ↗</span></div><div class="status">Económico · 3.75 oz · Cabello</div><h3>FIX YOUR LID — Ultra Light · Pomada capilar</h3><p>Pomada ligera de fijación suave y bajo brillo para peinados de apariencia natural. Fórmula a base de agua, sin fragancia y fácil de retirar.</p><a class="btn primary affiliate-btn" href="https://www.amazon.com/dp/B0DSGN4NKC?tag=kejarocare-20" target="_blank" rel="sponsored nofollow noopener" aria-label="Ver FIX YOUR LID en Amazon">Ver producto y precio en Amazon ↗</a></article>
@@ -102,8 +150,129 @@
  function experienceText(x){return x==='inicio'?'Te conviene una guía paso a paso y un vocabulario sencillo, sin demasiadas opciones al mismo tiempo.':x==='basico'?'Ordena los productos que ya usas y evita duplicar funciones antes de comprar algo nuevo.':x==='rutina'?'Revisa qué productos sí usas, cómo responde tu piel o cabello y qué resultado quieres mejorar.':'Compara ingredientes o características, tamaño, coste por uso y reputación del vendedor; verifica cada afirmación antes de comprar.';}
  form.addEventListener('submit',function(e){e.preventDefault();e.stopPropagation();if(!form.reportValidity())return;const d=Object.fromEntries(fields.map(id=>[id,document.getElementById(id).value]));const plan=goalPlan(d.goal);result.replaceChildren();result.appendChild(el('h3',{},'Tu perfil KEJARO está listo'));result.appendChild(el('p',{},'Esta orientación se basa en tus respuestas; es un punto de partida, no un diagnóstico ni una prescripción.'));
  const tags=el('div',{class:'profile-tags'});[plan.title.replace('Tu ruta: ',''),d.country,'Presupuesto: '+({'bajo':'económico','medio':'medio','alto':'medio-alto','premium':'premium','variable':'flexible'}[d.budget]),({'simple':'rutina sencilla','moderada':'rutina equilibrada','detallada':'rutina ampliada'}[d.routine])].forEach(t=>tags.appendChild(el('span',{},t)));result.appendChild(tags);
- addSection(result,'1. Por dónde empezar',plan.steps);addSection(result,'2. Ajustes para tus respuestas',d.goal==='piel'||d.goal==='barba'||d.goal==='completo'||d.goal==='estilo'?skinAdvice(d.skin,d.concern):[({'cabello':'Adapta el champú al cuero cabelludo y el producto de peinado al acabado que buscas.','fragancia':'Piensa primero en la ocasión, la familia aromática y el nivel de intensidad que disfrutas.'}[d.goal]||'Elige productos por la función que cumplen, no solo por su popularidad.'),...skinAdvice(d.skin,d.concern).slice(1)]);addSection(result,'3. Cómo cuidar tu presupuesto',budgetText(d.budget));addSection(result,'4. El tipo de rutina que mejor encaja',routineText(d.routine));addSection(result,'5. Tu siguiente paso',experienceText(d.experience));addSection(result,'Qué revisar antes de comprar',[plan.avoid,'Comprueba autenticidad, precio final, gastos de envío y política de devolución de la tienda.','Las futuras recomendaciones de tiendas se adaptarán al país seleccionado cuando haya enlaces y disponibilidad verificados.']);result.appendChild(el('p',{class:'disclaimer'},'KEJARO todavía no ofrece productos con enlaces de compra activos en esta versión. No se ha comprobado disponibilidad, precio ni envío de artículos concretos. Si presentas irritación persistente, dolor, caída repentina del cabello u otra preocupación médica, consulta a un profesional sanitario.'));result.style.display='block';result.focus({preventScroll:true});result.scrollIntoView({behavior:'smooth',block:'start'});});
+ addSection(result,'1. Por dónde empezar',plan.steps);addSection(result,'2. Ajustes para tus respuestas',d.goal==='piel'||d.goal==='barba'||d.goal==='completo'||d.goal==='estilo'?skinAdvice(d.skin,d.concern):[({'cabello':'Adapta el champú al cuero cabelludo y el producto de peinado al acabado que buscas.','fragancia':'Piensa primero en la ocasión, la familia aromática y el nivel de intensidad que disfrutas.'}[d.goal]||'Elige productos por la función que cumplen, no solo por su popularidad.'),...skinAdvice(d.skin,d.concern).slice(1)]);addSection(result,'3. Cómo cuidar tu presupuesto',budgetText(d.budget));addSection(result,'4. El tipo de rutina que mejor encaja',routineText(d.routine));addSection(result,'5. Tu siguiente paso',experienceText(d.experience));addSection(result,'Qué revisar antes de comprar',[plan.avoid,'Comprueba autenticidad, precio final, gastos de envío y política de devolución de la tienda.','Los enlaces mostrados dirigen a tiendas externas; comprueba envío, moneda y disponibilidad para tu país antes de comprar.']);result.appendChild(el('p',{class:'disclaimer'},'La tienda KEJARO incluye productos con enlaces de afiliado. Los precios, la disponibilidad y el envío se consultan en Amazon; KEJARO no los garantiza. Si presentas irritación persistente, dolor, caída repentina del cabello u otra preocupación médica, consulta a un profesional sanitario.'));result.style.display='block';result.focus({preventScroll:true});result.scrollIntoView({behavior:'smooth',block:'start'});});
  form.addEventListener('reset',()=>{setTimeout(()=>{result.style.display='none';result.replaceChildren();adjustFields();},0)});document.getElementById('year').textContent=new Date().getFullYear();adjustFields();
+})();
+</script>
+<script>
+/* Asesor de reglas KEJARO: reconoce productos visibles en la tienda; no llama a IA externa. */
+(()=>{'use strict';
+ const root=document.getElementById('ka-dialogue'); if(!root)return;
+ const state={step:0,goal:'',need:'',budget:''};
+ const GOALS=[['piel','Piel y rostro'],['cabello','Cabello y peinado'],['barba','Barba y afeitado'],['completo','Rutina completa']];
+ const NEEDS={
+  piel:[['limpieza','Limpiar el rostro'],['hidratacion','Hidratación'],['grasa','Controlar el exceso de grasa'],['sensible','Piel sensible']],
+  cabello:[['natural','Fijación ligera y natural'],['mate','Acabado mate y definición'],['general','Explorar opciones de peinado']],
+  barba:[['suavizar','Suavizar la barba'],['kit','Rutina completa de barba'],['afeitado','Cuidado al afeitarme']],
+  completo:[['basicos','Comenzar con lo esencial'],['variedad','Comparar distintas opciones']]
+ };
+ const BUDGET=[['bajo','Económico'],['medio','Flexible / intermedio'],['alto','Premium o exclusivo'],['variable','Sin preferencia']];
+ const txt=(node,value)=>{node.textContent=value;return node};
+ function el(tag,className,textValue){const e=document.createElement(tag);if(className)e.className=className;if(textValue!==undefined)txt(e,textValue);return e}
+ function normalize(v){return (v||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'')}
+ function detectCare(text){const t=normalize(text),tags=[];
+  if(/cabello|capilar|pomada|peinado|hair|cuero cabelludo|shampoo|champu/.test(t))tags.push('cabello');
+  if(/barba|beard|afeitado|vello facial|bigote/.test(t))tags.push('barba');
+  if(/piel|rostro|facial|face wash|limpiador facial|skincare|protector solar/.test(t))tags.push('piel');
+  if(/fragancia|perfume|colonia|eau de/.test(t))tags.push('fragancia');
+  return tags;
+ }
+ function readCatalog(){
+  return Array.from(document.querySelectorAll('#productos .store-tier .product')).map((card,i)=>{
+   const title=card.querySelector('h3')?.textContent?.trim()||'';
+   const description=card.querySelector('p')?.textContent?.trim()||'';
+   const status=card.querySelector('.status')?.textContent?.trim()||'';
+   const tier=card.closest('.store-tier')?.querySelector('.tier-heading h3')?.textContent?.trim()||'Catálogo';
+   const anchor=card.querySelector('a.affiliate-btn[href],a[href*="amazon.com"][href]');
+   if(!title||!anchor)return null;
+   let url;try{url=new URL(anchor.getAttribute('href'),location.href);if(!['https:','http:'].includes(url.protocol))return null}catch(_){return null}
+   const care=card.dataset.care ? card.dataset.care.split(/[\s,;]+/).map(normalize):detectCare([title,description,status].join(' '));
+   const keywords=normalize([title,description,status,card.dataset.tags||'',card.dataset.need||''].join(' '));
+   return {title,description,tier,care,keywords,url:url.href,index:i};
+  }).filter(Boolean);
+ }
+ function score(p,goal,need,budget){
+  if(goal==='completo'){if(!p.care.length)return -99}
+  else if(!p.care.includes(goal))return -99;
+  let s=goal==='completo'?4:12;
+  const t=p.keywords;
+  const matches=(r)=>r.test(t);
+  if(goal==='cabello'){
+   if(need==='natural')s+=matches(/fijacion (ligera|suave)|bajo brillo|natural|flexible|ultra light/)?8:0;
+   if(need==='mate')s+=matches(/mate|matte|definid/)?8:0;
+  }
+  if(goal==='piel'){
+   if(need==='limpieza')s+=matches(/limpia|wash|limpiador/)?8:0;
+   if(need==='hidratacion')s+=matches(/hidrata|humecta|moistur/)?8:0;
+   if(need==='grasa')s+=matches(/grasa|limpiador|limpieza|gel/)?5:0;
+   if(need==='sensible')s+=matches(/sin fragancia|sensible|suave/)?2:0;
+  }
+  if(goal==='barba'){
+   if(need==='suavizar')s+=matches(/aceite|suaviz|acondicion|oil/)?8:0;
+   if(need==='kit')s+=matches(/kit|piezas|completo|rutina/)?8:0;
+   if(need==='afeitado')s+=matches(/afeita|shav|irritacion/)?6:0;
+  }
+  if(goal==='completo'&&need==='basicos')s+=matches(/limpiador|limpieza|cuidado facial|rutina/)?5:0;
+  const tier=normalize(p.tier);
+  if(budget==='bajo'){if(tier.includes('economico'))s+=5;else if(tier.includes('exclusivo'))s-=2;}
+  if(budget==='medio'){if(tier.includes('premium'))s+=3;else if(tier.includes('economico'))s+=2;}
+  if(budget==='alto'&&(tier.includes('premium')||tier.includes('exclusivo')))s+=4;
+  return s;
+ }
+ function selectProducts({goal,need,budget},limit=3){const all=readCatalog();const candidates=all.map(p=>({...p,score:score(p,goal,need,budget)})).filter(p=>p.score>0).sort((a,b)=>b.score-a.score||a.index-b.index);return candidates.slice(0,limit)}
+ function advice(goal,need){
+  const map={piel:'Una rutina básica puede incluir limpieza suave, hidratación y protector solar de amplio espectro SPF 30 o superior durante el día.',cabello:'Elige el acabado del peinado antes de elegir la pomada. Usa poca cantidad y ajusta según el resultado.',barba:'Limpia el vello facial y la piel con suavidad. El aceite puede acondicionar la barba, pero no garantiza que crezca más.',completo:'Empieza por los productos esenciales que realmente uses. Añade uno nuevo cada vez y observa cómo te resulta.'};
+  if(goal==='piel'&&need==='sensible')return 'Si tu piel se irrita con facilidad, introduce un producto a la vez y prioriza fórmulas suaves; la categoría o el precio no garantizan tolerancia.';
+  if(goal==='piel'&&need==='grasa')return 'La piel grasa también necesita hidratación. Evita limpiarla en exceso; busca una rutina simple y consistente.';
+  if(goal==='barba'&&need==='afeitado')return 'Para afeitarte, reduce la fricción, usa una cuchilla limpia y no repases innecesariamente la misma zona.';
+  return map[goal]||map.completo;
+ }
+ function smallNote(){return 'Esta herramienta utiliza reglas y las fichas visibles de KEJARO, no inteligencia artificial conversacional ni diagnóstico médico. Los precios y el envío se consultan en la tienda externa. Los enlaces pueden generar comisiones de afiliado.'}
+ function recommendationsBox(parent,profile,compact=false){
+  const list=selectProducts(profile,compact?3:3), wrap=el('div','ka-results');
+  if(list.length===0){wrap.appendChild(el('p','ka-foot','Todavía no hay un producto específico en el catálogo para esta necesidad. Puedes explorar la tienda completa sin comprar algo que no necesitas.'));}
+  for(const p of list){const card=el('article','ka-product');const top=el('div','ka-product-top');top.appendChild(el('span','ka-tag',p.tier));card.appendChild(top);card.appendChild(el('h4','',p.title));card.appendChild(el('p','',p.description));const a=el('a','', 'Ver ficha y precio ↗');a.href=p.url;a.target='_blank';a.rel='sponsored nofollow noopener';a.setAttribute('aria-label','Ver '+p.title+' en tienda externa');card.appendChild(a);wrap.appendChild(card)}
+  parent.appendChild(wrap);
+ }
+ function reset(){state.step=0;state.goal='';state.need='';state.budget='';render()}
+ function options(list,handler){const wrap=el('div','ka-choices');list.forEach(([id,label])=>{const b=el('button','',label);b.type='button';b.addEventListener('click',()=>handler(id));wrap.appendChild(b)});return wrap;}
+ function render(){root.replaceChildren();
+  const step=state.step;
+  root.appendChild(el('div','ka-status',step<3?'PASO '+(step+1)+' DE 3':'TU SELECCIÓN PERSONALIZADA'));
+  const b=el('div','ka-bubble');
+  if(step===0){b.appendChild(el('strong','', '¡Bienvenido a KEJARO!'));b.appendChild(el('p','', '¿Qué quieres cuidar o mejorar hoy?'));root.appendChild(b);root.appendChild(options(GOALS,id=>{state.goal=id;state.step=1;render()}))}
+  else if(step===1){b.appendChild(el('strong','', 'Perfecto. Vamos a personalizarlo.'));b.appendChild(el('p','', '¿Qué resultado buscas principalmente?'));root.appendChild(b);root.appendChild(options(NEEDS[state.goal],id=>{state.need=id;state.step=2;render()}))}
+  else if(step===2){b.appendChild(el('strong','', 'Una última pregunta.'));b.appendChild(el('p','', '¿Qué nivel de compra prefieres explorar? Las categorías no equivalen a precios actuales.'));root.appendChild(b);root.appendChild(options(BUDGET,id=>{state.budget=id;state.step=3;render()}))}
+  else {
+   b.appendChild(el('strong','', 'Tu punto de partida'));b.appendChild(el('p','',advice(state.goal,state.need)));root.appendChild(b);
+   const catalog=readCatalog();root.appendChild(el('div','ka-selection',`Encontramos ${catalog.length} productos con enlaces en la tienda. Estas opciones coinciden con tus preferencias:`));
+   recommendationsBox(root,state);root.appendChild(el('p','ka-foot',smallNote()));
+   const see=el('a','btn secondary','Ver catálogo completo ↗');see.href='#productos';root.appendChild(see);
+  }
+  const actions=el('div','ka-actions');
+  if(step>0){const back=el('button','ka-reset','← Volver');back.type='button';back.addEventListener('click',()=>{state.step=Math.max(0,state.step-1);render()});actions.appendChild(back)}
+  if(step!==0){const restart=el('button','ka-reset','Empezar de nuevo');restart.type='button';restart.addEventListener('click',reset);actions.appendChild(restart)}
+  root.appendChild(actions);
+ }
+ function quizRecommendations(){const form=document.getElementById('routineForm'),result=document.getElementById('result');if(!form||!result)return;
+  form.addEventListener('submit',()=>{if(!form.checkValidity())return;
+   // El manejador de la encuesta se ejecuta primero y después añadimos enlaces del catálogo real.
+   const profile={goal:form.querySelector('#goal')?.value||'completo',need:'general',budget:form.querySelector('#budget')?.value||'variable'};
+   const concern=form.querySelector('#concern')?.value||'';
+   if(profile.goal==='cabello')profile.need=concern==='peinado'?'natural':'general';
+   if(profile.goal==='piel')profile.need=concern==='brillo'?'grasa':concern==='hidratacion'||concern==='sequedad'?'hidratacion':concern==='irritacion'?'sensible':'limpieza';
+   if(profile.goal==='barba')profile.need=concern==='afeitado'?'afeitado':'kit';
+   if(profile.goal==='estilo'){profile.goal='cabello';profile.need='general'}
+   if(profile.goal==='fragancia')profile.goal='fragancia';
+   const block=el('div','ka-quiz-results');block.appendChild(el('h4','', 'Productos que puedes explorar en KEJARO'));
+   block.appendChild(el('p','', 'Selección orientativa tomada de los productos publicados; no confirma precios ni disponibilidad.'));
+   recommendationsBox(block,profile,true);block.appendChild(el('p','ka-foot','Como Afiliado de Amazon, KEJARO puede ganar comisiones por compras que cumplan los requisitos.'));
+   const previous=result.querySelector('.ka-quiz-results');if(previous)previous.remove();result.appendChild(block);
+  });
+ }
+ render();quizRecommendations();
+ // Sólo exponemos lectura para verificación de funcionamiento, sin datos personales.
+ window.KEJAROCatalog={count:()=>readCatalog().length,items:()=>readCatalog().map(p=>({title:p.title,tier:p.tier,care:p.care}))};
 })();
 </script>
 </body></html>
